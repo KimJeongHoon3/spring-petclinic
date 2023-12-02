@@ -24,7 +24,8 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation 'javax.cache:cache-api'
-  compileOnly 'org.projectlombok:lombok'
+  implementation 'org.projectlombok:lombok'
+  annotationProcessor 'org.projectlombok:lombok'
   runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
   runtimeOnly 'org.webjars:webjars-locator-core'
   runtimeOnly "org.webjars.npm:bootstrap:${webjarsBootstrapVersion}"
@@ -35,6 +36,8 @@ dependencies {
   runtimeOnly 'org.postgresql:postgresql'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.projectlombok:lombok'
+  testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 test {

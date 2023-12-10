@@ -21,10 +21,10 @@ public class Owner {
 	private String city;
 	private String telephone;
 
-	@ElementCollection(fetch = FetchType.LAZY)
+	@ElementCollection
 	@CollectionTable(name = "pets_ddd")
 	@OrderColumn(name = "pet_idx")
-	private List<Pet> pet;
+	private List<Pet> pets = Collections.emptyList();
 
 	@Builder
 	public Owner(OwnerId id, OwnerName name, String address, String city, String telephone) {
@@ -35,4 +35,12 @@ public class Owner {
 		this.telephone = telephone;
 	}
 
+	public void changePets(List<Pet> newPets) {
+		this.pets.clear();
+		pets.addAll(newPets);
+	}
+
+//	public List<Pet> getPets() {
+//		return pets.isEmpty() ? pets : pets.to;
+//	}
 }
